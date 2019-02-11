@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Libraries">
+      <UniqueIdentifier>{25eba125-066a-460f-9bf2-1e4182c3e463}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\C++ toolkit">
+      <UniqueIdentifier>{6ff8231b-7562-48df-ab48-a9bb552693fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\C++ toolkit\headers">
+      <UniqueIdentifier>{f2b52ef3-7031-4574-ab40-0df381d8d151}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\C++ toolkit\sources">
+      <UniqueIdentifier>{971a5ddb-b670-43d4-a20f-e885ce6b3ce1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\code\Color_Buffer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\Color_Buffer_Rgb565.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\Color_Buffer_Rgba8888.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\Rasterizer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\View.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Algorithms.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Array.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Char.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Cloneable.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Coordinates.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Decoder.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Encoder.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\File_Reader.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\File_Writer.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Input_Stream.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\macros.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Matrix.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Memory_Reader.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Memory_Writer.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Non_Copyable.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Obfuscation_Decoder.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Obfuscation_Encoder.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Object_Pool.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Output_Stream.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Point.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Pointer.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Random_Generator.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Reader.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Rotation.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Scaling.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Seekable.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Shared_Ptr.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Stream.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\String.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Transformation.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Translation.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\types.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Vector.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Void_Decoder.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Void_Encoder.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Writer.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\.libraries\cpp-toolkit\headers\Projection.hpp">
+      <Filter>Libraries\C++ toolkit\headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\code\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\View.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\.libraries\cpp-toolkit\sources\Input_Stream.cpp">
+      <Filter>Libraries\C++ toolkit\sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\.libraries\cpp-toolkit\sources\Output_Stream.cpp">
+      <Filter>Libraries\C++ toolkit\sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\.libraries\cpp-toolkit\sources\String.cpp">
+      <Filter>Libraries\C++ toolkit\sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
