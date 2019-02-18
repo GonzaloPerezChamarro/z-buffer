@@ -24,7 +24,7 @@ int main ()
     // Create the window and the view that will be shown within the window:
 
     Window window(VideoMode(window_width, window_height), "Z-Buffer", Style::Titlebar | Style::Close, ContextSettings(32));
-    View   view  (window_width, window_height);
+    View   view  ("..//..//resources//scene.xml", window_width, window_height );
 
     // Initialization:
 

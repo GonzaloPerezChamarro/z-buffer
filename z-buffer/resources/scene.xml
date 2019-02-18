@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scene>
+  <mesh>
+    <model>mill.obj</model>
+    <position>0.0,-1,-4.0</position>
+    <rotation>0.0,0.0,0.0</rotation>
+    <scale>0.3</scale>
+    <color>1,1,1</color>
+  </mesh>
+
+  <light>
+    <intensity>100</intensity>
+    <position>0,0,0</position>
+    <rotation>0,0,0</rotation>
+    <scale>1</scale>
+  </light>
+  
+</scene>
