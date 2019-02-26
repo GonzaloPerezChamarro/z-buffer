@@ -168,14 +168,36 @@ namespace example
 			vertex[3] = 1.f;
 		}
 
+		Point4i clipped_vertices[20];
+		static const int clipped_indices[20] = { 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 };
+
+		/*
 		for (int * indices = original_indices.data(), *end = indices + original_indices.size();
 			indices < end;
 			indices += 3)
 		{
 			if (is_frontface(transformed_vertices.data(), indices))
 			{
+				int clipped_vertex_count = clip_with_viewport_2d(&copy_vertices[0], indices, indices + 3, clipped_vertices);
+				if (clipped_vertex_count >= 3)
+				{
+					rasterizer->set_color(transformed_colors[*indices]);
+					rasterizer->fill_convex_polygon_z_buffer(display_vertices.data(), indices, indices+3);
+
+				//}
+			}
+		}*/
+		vector<int> indd;
+		for (int i = 0; i < original_indices.size(); ++i)
+		{
+			indd.push_back(i);
+		}
+		for (int * indices = indd.data(), *end = indices + indd.size(); indices < end; indices +=3)
+		{
+			if (is_frontface(transformed_vertices.data(), indices))
+			{
 				rasterizer->set_color(transformed_colors[*indices]);
-				rasterizer->fill_convex_polygon_z_buffer(display_vertices.data(), indices, indices + 3);
+				rasterizer->fill_convex_polygon_z_buffer(display_vertices.data(),indices, indices+3);
 			}
 		}
 	}
@@ -186,7 +208,79 @@ namespace example
 		const Vertex & v1 = projected_vertices[indices[1]];
 		const Vertex & v2 = projected_vertices[indices[2]];
 
-		return ((v1[0] - v0[0]) * (v2[1] - v0[1]) - (v2[0] - v0[0]) * (v1[1] - v0[1]) > 0.f);;
+		return ((v1[0] - v0[0]) * (v2[1] - v0[1]) - (v2[0] - v0[0]) * (v1[1] - v0[1]) > 0.f);
+	}
+
+	bool Model::is_frontface(const Vertex * const projected_vertices, const int index)
+	{
+		const Vertex & v0 = projected_vertices[index];
+		const Vertex & v1 = projected_vertices[index+1];
+		const Vertex & v2 = projected_vertices[index+2];
+
+		return ((v1[0] - v0[0]) * (v2[1] - v0[1]) - (v2[0] - v0[0]) * (v1[1] - v0[1]) > 0.f);
+	}
+	
+	
+	int clip_with_viewport_2d(const Point4f * vertices, const int * first_index, const int * last_index, Point4f * clipped_vertices)
+	{
+		Point4f        aux_vertices[20];
+		static const int aux_indices[20] = { 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 };
+
+		int count = clip_with_line_2d
+		(
+			vertices,
+			first_index,
+			last_index,
+			aux_vertices,
+			-1,
+			0,
+			0
+		);
+
+		if (count < 3) return count;
+
+		count = clip_with_line_2d
+		(
+			aux_vertices,
+			aux_indices,
+			aux_indices + count,
+			clipped_vertices,
+			? ,
+			? ,
+			?
+		);
+
+		if (count < 3) return count;
+
+		count = clip_with_line_2d
+		(
+			clipped_vertices,
+			aux_indices,
+			aux_indices + count,
+			aux_vertices,
+			? ,
+			? ,
+			?
+		);
+
+		if (count < 3) return count;
+
+		return clip_with_line_2d
+		(
+			aux_vertices,
+			aux_indices,
+			aux_indices + count,
+			clipped_vertices,
+			? ,
+			? ,
+			?
+		);
+	}
+
+	int clip_with_line_2d(const Point4f * vertices, const int * first_index, const int * last_index, Point4f * clipped_vertices,
+		float a, float b, float c)
+	{
+
 	}
 
 }

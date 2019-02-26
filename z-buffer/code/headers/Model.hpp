@@ -80,6 +80,7 @@ namespace example
 		void paint(Rasterizer<Color_Buffer> * rasterizer, std::shared_ptr<Light> light);
 
 		bool is_frontface(const Vertex * const projected_vertices, const int * const indices);
+		bool is_frontface(const Vertex * const projected_vertices, const int index);
 
 	private:
 
@@ -99,7 +100,18 @@ namespace example
 			return m[0] * n[0] + m[1] * n[1] + m[2] * n[2];
 		}
 
+		int clip_with_viewport_2d(const Point4f * vertices, const int * first_index, const int * last_index, Point4f * clipped_vertices);
 
+		int clip_with_line_2d
+		(
+			const Point4f * vertices,
+			const int      * first_index,
+			const int      * last_index,
+			Point4f * clipped_vertices,
+			float      a,
+			float      b,
+			float      c
+		);
 
 	};
 }
