@@ -44,20 +44,23 @@ namespace example
 		Projection3f projection(0.3f, 1000.f, 90, (width /height));
 		for (auto & m : models)
 		{
-			m->update(&projection);
+			m->update(&projection, lights.front(),AMBIENTAL_INTENSITY);
 		}
     }
 
     void View::paint ()
     {
+
+
 		rasterizer.clear();
+
 		for (auto & m : models)
 		{
-			m->paint(&rasterizer, lights.front());
+			m->paint(&rasterizer);
 		}
-
 		rasterizer.get_color_buffer().gl_draw_pixels(0, 0);
-		glClearColor(0.6f, 0.6f, 0.8f, 1.0f);
+
+		glClearColor(0, 0, 1, 1);
     }
 
     bool View::is_frontface (const Vertex * const projected_vertices, const int * const indices)

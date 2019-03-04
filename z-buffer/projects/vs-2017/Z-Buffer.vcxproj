@@ -99,7 +99,6 @@
     <ClInclude Include="..\..\code\headers\Light.hpp" />
     <ClInclude Include="..\..\code\headers\Model.hpp" />
     <ClInclude Include="..\..\code\headers\Rasterizer.hpp" />
-    <ClInclude Include="..\..\code\headers\Scene.hpp" />
     <ClInclude Include="..\..\code\headers\View.hpp" />
     <ClInclude Include="..\..\libraries\cpp-toolkit\headers\Algorithms.hpp" />
     <ClInclude Include="..\..\libraries\cpp-toolkit\headers\Array.hpp" />
@@ -142,7 +141,6 @@
   <ItemGroup>
     <ClCompile Include="..\..\code\sources\main.cpp" />
     <ClCompile Include="..\..\code\sources\Model.cpp" />
-    <ClCompile Include="..\..\code\sources\Scene.cpp" />
     <ClCompile Include="..\..\code\sources\View.cpp" />
     <ClCompile Include="..\..\libraries\cpp-toolkit\sources\Input_Stream.cpp" />
     <ClCompile Include="..\..\libraries\cpp-toolkit\sources\Output_Stream.cpp" />

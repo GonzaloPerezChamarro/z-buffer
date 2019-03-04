@@ -44,6 +44,7 @@ namespace example
 
 	private:
 		Transform transform;
+		Transform normals_tr;
 
 		Position position;
 		Rotation rotation_x;
@@ -56,8 +57,7 @@ namespace example
 		string error_message;
 		size_t n_Vertex;
 
-		Vertex_Buffer     original_vertices;
-		Vertex_Buffer	  original_normals;
+
 		Index_Buffer      original_indices;
 
 		Vertex_Buffer     copy_vertices;
@@ -71,31 +71,36 @@ namespace example
 		Vertex_Buffer	transformed_normals;
 		vector< Point4i > display_vertices;
 
+		vector<int> index_order;
+		int number_of_vertices;
+
+
 	public:
 
 
 		Model(const string & path, Translation3f position, Scaling3f scale, float rx, float ry, float rz, Color c);
 
-		void update(Projection3f * projection);
-		void paint(Rasterizer<Color_Buffer> * rasterizer, std::shared_ptr<Light> light);
+		void update(Projection3f * projection, std::shared_ptr<Light> light, float ambiental_intensity);
+		void paint(Rasterizer<Color_Buffer> * rasterizer);
 
 		bool is_frontface(const Vertex * const projected_vertices, const int * const indices);
 		bool is_frontface(const Vertex * const projected_vertices, const int index);
 
 	private:
 
-		float get_distance(const Point4f & point)const
-		{
-			float distance = sqrt(pow(point[0], 2) + pow(point[1], 2) + pow(point[2], 2));
-			return distance;
-		}
 
-		float get_vector_module(const Point4f & vector)const
+		float get_vector_module(const Vector3f & vector)const
 		{
 			return sqrt((vector[0] * vector[0]) + (vector[1] * vector[1]) + (vector[2] * vector[2]));
 		}
 
-		float dot(Vertex m, Vertex n)
+		Vector3f normalize_vector(Vector3f vector)
+		{
+			float module = get_vector_module(vector);
+			return Vector3f({ vector[0] / module, vector[1] / module, vector[2] / module});
+		}
+
+		float dot(Vector3f m, Vector3f n)
 		{
 			return m[0] * n[0] + m[1] * n[1] + m[2] * n[2];
 		}

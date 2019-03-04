@@ -66,6 +66,9 @@ namespace example
 		std::list<std::shared_ptr<Model>> models;
 		std::list<std::shared_ptr<Light>> lights;
 
+		const float AMBIENTAL_INTENSITY = 0.1f;
+
+
     public:
 
         View(const std::string & path, size_t width, size_t height);

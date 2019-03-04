@@ -153,9 +153,6 @@
     <ClInclude Include="..\..\libraries\cpp-toolkit\headers\Writer.hpp">
       <Filter>Libraries\C++ toolkit\headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Scene.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\code\headers\Model.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -178,9 +175,6 @@
     </ClCompile>
     <ClCompile Include="..\..\libraries\cpp-toolkit\sources\String.cpp">
       <Filter>Libraries\C++ toolkit\sources</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\sources\Scene.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Model.cpp">
       <Filter>Source Files</Filter>
