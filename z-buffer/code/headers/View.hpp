@@ -79,7 +79,7 @@ namespace example
     private:
 
 		bool load_scene(const std::string & path);
-		bool parse_mesh(xml_Node * mesh_data);
+		std::shared_ptr<Model> parse_mesh(xml_Node * mesh_data);
 		bool parse_light(xml_Node * light_data);
 
         bool is_frontface (const Vertex * const projected_vertices, const int * const indices);

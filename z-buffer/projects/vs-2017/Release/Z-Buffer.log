@@ -1,0 +1,7 @@
+﻿  Model.cpp
+d:\universidad\cuarto\3davanzado\z-buffer\z-buffer\code\sources\model.cpp(77): warning C4018: '<': no coinciden signed/unsigned
+d:\universidad\cuarto\3davanzado\z-buffer\z-buffer\code\sources\model.cpp(103): warning C4018: '<': no coinciden signed/unsigned
+d:\universidad\cuarto\3davanzado\z-buffer\z-buffer\code\sources\model.cpp(121): warning C4244: '*=': conversión de 'float' a 'uint8_t'; posible pérdida de datos
+d:\universidad\cuarto\3davanzado\z-buffer\z-buffer\code\sources\model.cpp(122): warning C4244: '*=': conversión de 'float' a 'uint8_t'; posible pérdida de datos
+d:\universidad\cuarto\3davanzado\z-buffer\z-buffer\code\sources\model.cpp(123): warning C4244: '*=': conversión de 'float' a 'uint8_t'; posible pérdida de datos
+LINK : fatal error LNK1181: no se puede abrir el archivo de entrada 'sfml-main.lib'

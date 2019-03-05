@@ -13,12 +13,13 @@ namespace example
 	using namespace tinyobj;
 	using std::max;
 
-	Model::Model(const std::string & path, Translation3f position, Scaling3f scale, float rx, float ry, float rz, Color c)
-		:position(position), scale(scale)
+	Model::Model(const string & name, const std::string & path, Translation3f position, Scaling3f scale, float rx, float ry, float rz, Color c)
+		:position(position), scale(scale), name(name)
 	{
 		rotation[0] = rx;
 		rotation[1] = ry;
 		rotation[2] = rz;
+
 
 		Vertex_Buffer     original_vertices;
 		Vertex_Buffer	  original_normals;
@@ -87,13 +88,16 @@ namespace example
 
 	void Model::update(Projection3f * projection, std::shared_ptr<Light> light, float ambiental_intensity)
 	{
+
+		rotation[1] += rotation_speed;
 		rotation_x.set< Rotation3f::AROUND_THE_X_AXIS >(rotation[0]);
 		rotation_y.set< Rotation3f::AROUND_THE_Y_AXIS >(rotation[1]);
 		rotation_z.set< Rotation3f::AROUND_THE_Z_AXIS >(rotation[2]);
 
-		normals_tr = position * rotation_x * rotation_y * rotation_z * scale;
+		normals_tr = position * rotation_x * rotation_y * rotation_z * scale *  global_tr;
 		transform = (*projection) * normals_tr;
-
+		
+		refresh_children_transform();
 
 		for(size_t index = 0; index < number_of_vertices; ++index)
 		{
@@ -158,6 +162,14 @@ namespace example
 				rasterizer->set_color(transformed_colors[*indices]);
 				rasterizer->fill_convex_polygon_z_buffer(display_vertices.data(),indices, indices+3);
 			}
+		}
+	}
+
+	void Model::refresh_children_transform()
+	{
+		for (map<string, std::shared_ptr<Model>>::iterator it =children.begin(); it != children.end(); ++it)
+		{
+			it->second->set_parent_transform(normals_tr);
 		}
 	}
 

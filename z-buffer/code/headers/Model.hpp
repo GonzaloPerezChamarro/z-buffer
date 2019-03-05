@@ -8,6 +8,7 @@
 #include <Projection.hpp> 
 #include <string>
 #include <vector>
+#include <map>
 
 
 #include <Translation.hpp> 
@@ -20,6 +21,7 @@ namespace example
 	using namespace toolkit;
 	using std::string;
 	using std::vector;
+	using std::map;
 
 	using toolkit::Point4i;
 
@@ -44,6 +46,7 @@ namespace example
 
 	private:
 		Transform transform;
+		Transform global_tr;
 		Transform normals_tr;
 
 		Position position;
@@ -74,11 +77,16 @@ namespace example
 		vector<int> index_order;
 		int number_of_vertices;
 
+		map<string, std::shared_ptr<Model>> children;
+		string name;
+
+		float rotation_speed;
+
 
 	public:
 
 
-		Model(const string & path, Translation3f position, Scaling3f scale, float rx, float ry, float rz, Color c);
+		Model(const string & name, const string & path, Translation3f position, Scaling3f scale, float rx, float ry, float rz, Color c);
 
 		void update(Projection3f * projection, std::shared_ptr<Light> light, float ambiental_intensity);
 		void paint(Rasterizer<Color_Buffer> * rasterizer);
@@ -86,8 +94,28 @@ namespace example
 		bool is_frontface(const Vertex * const projected_vertices, const int * const indices);
 		bool is_frontface(const Vertex * const projected_vertices, const int index);
 
+		void add_child(const string name, std::shared_ptr<Model> child)
+		{
+			children[name] = child;
+		}
+
+		const string & get_name() const { return name; }
+
+		void set_parent_transform(Transform tr)
+		{
+			global_tr = tr;
+		}
+
+		Transform get_transform() const
+		{
+			return transform;
+		}
+
+		void set_rotation_speed_y(float speed) { rotation_speed = speed; }
+
 	private:
 
+		void refresh_children_transform();
 
 		float get_vector_module(const Vector3f & vector)const
 		{

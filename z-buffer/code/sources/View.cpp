@@ -50,8 +50,6 @@ namespace example
 
     void View::paint ()
     {
-
-
 		rasterizer.clear();
 
 		for (auto & m : models)
@@ -107,21 +105,26 @@ namespace example
 
 	}
 
-	bool View::parse_mesh(xml_Node * mesh_data)
+	std::shared_ptr<Model> View::parse_mesh(xml_Node * mesh_data)
 	{
 		string path = "..\\..\\resources\\";
 
 		Translation3f position;
 		float rot_x, rot_y, rot_z;
 		Scaling3f scale;
+		float rot_speed;
 
 		string attributes;
+		string name;
+
+		map<string, std::shared_ptr<Model>> children;
 
 		for (xml_Node * tag = mesh_data->first_node(); tag; tag = tag->next_sibling()) {
 			attributes = tag->value();
 			if (tag->type() == node_element) {
 				if (string(tag->name()) == "model") 
 				{
+					name = attributes;
 					path += attributes;
 				}
 				else if (string(tag->name()) == "position") 
@@ -171,14 +174,35 @@ namespace example
 					}
 					color.set(values[0], values[1], values[2]);
 				}
+				else if (string(tag->name()) == "rot_speed")
+				{
+					rot_speed = std::stof(tag->value());
+				}
+				else if (string(tag->name()) == "children")
+				{
+					for (xml_Node * child = tag->first_node(); child;child = child->next_sibling())
+					{
+
+						std::shared_ptr<Model> c = parse_mesh(child);
+						children[c->get_name()] = c;
+						
+					}
+				}
 			}
 		}
 
-		std::shared_ptr<Model> new_model(new Model(path, position, scale, rot_x, rot_y, rot_z, color));
-		std::cout << "Isla" << std::endl;
-		models.push_back(new_model);
+		std::shared_ptr<Model> new_model(new Model(name, path, position, scale, rot_x, rot_y, rot_z, color));
+		models.push_front(new_model);
+		//models.push_back(new_model);
 
-		return true;
+		for (std::map<string,std::shared_ptr<Model>>::iterator it = children.begin(); it != children.end(); ++it)
+		{
+			new_model->add_child(it->first, it->second);
+		}
+
+		new_model->set_rotation_speed_y(rot_speed);
+
+		return new_model;
 	}
 
 	bool View::parse_light(xml_Node * light_data)
