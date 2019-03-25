@@ -1,13 +1,13 @@
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
- *                                                                             *
- *  Started by Ángel on december of 2013                                       *
- *                                                                             *
- *  This is free software released into the public domain.                     *
- *                                                                             *
- *  angel.rodriguez@esne.edu                                                   *
- *                                                                             *
-\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/**
+ * @file View.cpp
+ * @author Gonzalo Perez Chamarro
+ * @brief Clase de código fuente de View.hpp
+ * @version 0.1
+ * @date 2019-03-10
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 
 #include <cmath>
 #include <cassert>
@@ -41,7 +41,7 @@ namespace example
 
     void View::update ()
     {
-		Projection3f projection(0.3f, 1000.f, 90, (width /height));
+		Projection3f projection(0.3f, 1000.f, 90.f, (float)(width /height));
 		for (auto & m : models)
 		{
 			m->update(&projection, lights.front(),AMBIENTAL_INTENSITY);
@@ -51,15 +51,15 @@ namespace example
     void View::paint ()
     {
 
-
-		rasterizer.clear();
+		rasterizer.clear(0,100,255);
 
 		for (auto & m : models)
 		{
 			m->paint(&rasterizer);
 		}
-		rasterizer.get_color_buffer().gl_draw_pixels(0, 0);
 
+		rasterizer.get_color_buffer().gl_draw_pixels(0, 0);
+		
 		glClearColor(0, 0, 1, 1);
     }
 
@@ -90,10 +90,12 @@ namespace example
 		{
 			for (xml_Node * elem = root->first_node(); elem; elem = elem->next_sibling()) 
 			{
+				//"Parseo" de un modelo
 				if (elem->type() == node_element && std::string(elem->name()) == "mesh") 
 				{
 					if (!parse_mesh(elem)) return false;
 				}
+				//"Parseo" de una luz
 				else if (elem->type() == node_element && std::string(elem->name()) == "light") 
 				{
 					if (!parse_light(elem)) return false;
@@ -107,23 +109,31 @@ namespace example
 
 	}
 
-	bool View::parse_mesh(xml_Node * mesh_data)
+	std::shared_ptr<Model> View::parse_mesh(xml_Node * mesh_data)
 	{
-		string path = "..\\..\\resources\\";
+		//Ruta relativa a los .obj
+		string path = "..\\resources\\";
 
 		Translation3f position;
 		float rot_x, rot_y, rot_z;
 		Scaling3f scale;
+		float rot_speed;
 
 		string attributes;
+		string name;
+
+		map<string, std::shared_ptr<Model>> children;
 
 		for (xml_Node * tag = mesh_data->first_node(); tag; tag = tag->next_sibling()) {
 			attributes = tag->value();
 			if (tag->type() == node_element) {
+				//Nombre del modelo
 				if (string(tag->name()) == "model") 
 				{
+					name = attributes;
 					path += attributes;
 				}
+				//Posicion del modelo
 				else if (string(tag->name()) == "position") 
 				{
 					vector<float> values;
@@ -138,6 +148,7 @@ namespace example
 					}
 					position.set(values[0], values[1], values[2]);
 				}
+				//Rotacion del modelo
 				else if (string(tag->name()) == "rotation")
 				{
 					std::vector<float> values;
@@ -153,10 +164,12 @@ namespace example
 					rot_y = values[1];
 					rot_z = values[2];
 				}
+				//Escala del modelo
 				else if (string(tag->name()) == "scale") 
 				{
 					scale.set(std::stof(tag->value()));
 				}
+				//Color del modelo
 				else if (string(tag->name()) == "color")
 				{
 					std::vector<uint8_t> values;
@@ -171,19 +184,42 @@ namespace example
 					}
 					color.set(values[0], values[1], values[2]);
 				}
+				//Rotacion en el eje Y del modelo
+				else if (string(tag->name()) == "rot_speed")
+				{
+					rot_speed = std::stof(tag->value());
+				}
+				//Modelos hijos
+				else if (string(tag->name()) == "children")
+				{
+					for (xml_Node * child = tag->first_node(); child;child = child->next_sibling())
+					{
+
+						std::shared_ptr<Model> c = parse_mesh(child);
+						children[c->get_name()] = c;
+						
+					}
+				}
 			}
 		}
 
-		std::shared_ptr<Model> new_model(new Model(path, position, scale, rot_x, rot_y, rot_z, color));
-		std::cout << "Isla" << std::endl;
-		models.push_back(new_model);
+		//El modelo padre es el ultimo en crearse, por lo que se realiza un push_front
+		// (y no push_back) para que en el momento de actualizarse, tenga preferencia el padre
+		std::shared_ptr<Model> new_model(new Model(name, path, position, scale, rot_x, rot_y, rot_z, color));
+		models.push_front(new_model);
 
-		return true;
+		for (std::map<string,std::shared_ptr<Model>>::iterator it = children.begin(); it != children.end(); ++it)
+		{
+			new_model->add_child(it->first, it->second);
+		}
+
+		new_model->set_rotation_speed_y(rot_speed);
+
+		return new_model;
 	}
 
 	bool View::parse_light(xml_Node * light_data)
 	{
-		float intensity;
 
 		Translation3f position;
 		float rot_x, rot_y, rot_z;
@@ -196,11 +232,7 @@ namespace example
 		{
 			attributes = tag->value();
 			if (tag->type() == node_element) {
-				if (string(tag->name()) == "intensity")
-				{
-					intensity = std::stof(attributes);
-				}
-				else if (string(tag->name()) == "position") 
+				if (string(tag->name()) == "position") 
 				{
 					size_t n_Coma = std::count(attributes.begin(), attributes.end(), ',');
 					std::vector<float> values;
@@ -230,6 +262,7 @@ namespace example
 				{
 					scale.set(std::stof(attributes));
 				}
+				//Actualmente no hay implementado color
 				else if (std::string(tag->name()) == "color") 
 				{
 					size_t n_Coma = std::count(attributes.begin(), attributes.end(), ',');
@@ -253,9 +286,8 @@ namespace example
 
 		}
 
-		std::shared_ptr<Light> new_light(new Light(position, scale, rot_x, rot_y, rot_z, intensity));
+		std::shared_ptr<Light> new_light(new Light(position, scale, rot_x, rot_y, rot_z));
 		lights.push_back(new_light);
-		std::cout << "Luz" << std::endl;
 		return true;
 	}
 

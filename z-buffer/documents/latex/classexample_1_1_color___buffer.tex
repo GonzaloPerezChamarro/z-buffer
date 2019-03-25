@@ -1,0 +1,140 @@
+\hypertarget{classexample_1_1_color___buffer}{}\section{example\+::Color\+\_\+\+Buffer Class Reference}
+\label{classexample_1_1_color___buffer}\index{example::Color\_Buffer@{example::Color\_Buffer}}
+
+
+{\ttfamily \#include $<$Color\+\_\+\+Buffer.\+hpp$>$}
+
+Inheritance diagram for example\+::Color\+\_\+\+Buffer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classexample_1_1_color___buffer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_color___buffer_a44c19770a14b0f8e46e7ceda1df5fc3d}{Color\+\_\+\+Buffer}} (size\+\_\+t \mbox{\hyperlink{classexample_1_1_color___buffer_ab61454d4b35cbba00d2e634d14ed20ac}{width}}, size\+\_\+t \mbox{\hyperlink{classexample_1_1_color___buffer_ae01f4538ee30af1d3072a425c5ad37ac}{height}})
+\item 
+size\+\_\+t \mbox{\hyperlink{classexample_1_1_color___buffer_a0bbc4a120bc04b512e303baf8330ff82}{get\+\_\+width}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classexample_1_1_color___buffer_a4d1495a260205b83e1bd28dd04c6eda2}{get\+\_\+height}} () const
+\item 
+int \mbox{\hyperlink{classexample_1_1_color___buffer_ae316a2df43a9ead02cc45170a8d0f7ed}{offset\+\_\+at}} (int x, int y) const
+\item 
+virtual int \mbox{\hyperlink{classexample_1_1_color___buffer_a76463553dc782f2dc24a61bec708e273}{bits\+\_\+per\+\_\+color}} () const =0
+\item 
+virtual void \mbox{\hyperlink{classexample_1_1_color___buffer_a3fbfa949ee340ccdb40ad0ce8339b827}{set\+\_\+color}} (int r, int g, int b)=0
+\item 
+virtual void \mbox{\hyperlink{classexample_1_1_color___buffer_a967ea326ec0889a36db523727a8154b5}{set\+\_\+pixel}} (int x, int y)=0
+\item 
+virtual void \mbox{\hyperlink{classexample_1_1_color___buffer_a1c919e629ef74e418e1ad416d0a5e85a}{set\+\_\+pixel}} (size\+\_\+t offset)=0
+\item 
+virtual void \mbox{\hyperlink{classexample_1_1_color___buffer_a793b667028b2eb7efde2cee76066eac7}{gl\+\_\+draw\+\_\+pixels}} (int raster\+\_\+x, int raster\+\_\+y) const =0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classexample_1_1_color___buffer_ab61454d4b35cbba00d2e634d14ed20ac}{width}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classexample_1_1_color___buffer_ae01f4538ee30af1d3072a425c5ad37ac}{height}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_color___buffer_a44c19770a14b0f8e46e7ceda1df5fc3d}\label{classexample_1_1_color___buffer_a44c19770a14b0f8e46e7ceda1df5fc3d}} 
+\index{example::Color\_Buffer@{example::Color\_Buffer}!Color\_Buffer@{Color\_Buffer}}
+\index{Color\_Buffer@{Color\_Buffer}!example::Color\_Buffer@{example::Color\_Buffer}}
+\subsubsection{\texorpdfstring{Color\_Buffer()}{Color\_Buffer()}}
+{\footnotesize\ttfamily example\+::\+Color\+\_\+\+Buffer\+::\+Color\+\_\+\+Buffer (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{width,  }\item[{size\+\_\+t}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_color___buffer_a76463553dc782f2dc24a61bec708e273}\label{classexample_1_1_color___buffer_a76463553dc782f2dc24a61bec708e273}} 
+\index{example::Color\_Buffer@{example::Color\_Buffer}!bits\_per\_color@{bits\_per\_color}}
+\index{bits\_per\_color@{bits\_per\_color}!example::Color\_Buffer@{example::Color\_Buffer}}
+\subsubsection{\texorpdfstring{bits\_per\_color()}{bits\_per\_color()}}
+{\footnotesize\ttfamily virtual int example\+::\+Color\+\_\+\+Buffer\+::bits\+\_\+per\+\_\+color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classexample_1_1_color___buffer___rgba8888_ab2e7a20a9dd24c5dd422d143d9a2d391}{example\+::\+Color\+\_\+\+Buffer\+\_\+\+Rgba8888}}, and \mbox{\hyperlink{classexample_1_1_color___buffer___rgb565_ad8125e1f708bd99aafce8ef7b713cc02}{example\+::\+Color\+\_\+\+Buffer\+\_\+\+Rgb565}}.
+
+\mbox{\Hypertarget{classexample_1_1_color___buffer_a4d1495a260205b83e1bd28dd04c6eda2}\label{classexample_1_1_color___buffer_a4d1495a260205b83e1bd28dd04c6eda2}} 
+\index{example::Color\_Buffer@{example::Color\_Buffer}!get\_height@{get\_height}}
+\index{get\_height@{get\_height}!example::Color\_Buffer@{example::Color\_Buffer}}
+\subsubsection{\texorpdfstring{get\_height()}{get\_height()}}
+{\footnotesize\ttfamily size\+\_\+t example\+::\+Color\+\_\+\+Buffer\+::get\+\_\+height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classexample_1_1_color___buffer_a0bbc4a120bc04b512e303baf8330ff82}\label{classexample_1_1_color___buffer_a0bbc4a120bc04b512e303baf8330ff82}} 
+\index{example::Color\_Buffer@{example::Color\_Buffer}!get\_width@{get\_width}}
+\index{get\_width@{get\_width}!example::Color\_Buffer@{example::Color\_Buffer}}
+\subsubsection{\texorpdfstring{get\_width()}{get\_width()}}
+{\footnotesize\ttfamily size\+\_\+t example\+::\+Color\+\_\+\+Buffer\+::get\+\_\+width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classexample_1_1_color___buffer_a793b667028b2eb7efde2cee76066eac7}\label{classexample_1_1_color___buffer_a793b667028b2eb7efde2cee76066eac7}} 
+\index{example::Color\_Buffer@{example::Color\_Buffer}!gl\_draw\_pixels@{gl\_draw\_pixels}}
+\index{gl\_draw\_pixels@{gl\_draw\_pixels}!example::Color\_Buffer@{example::Color\_Buffer}}
+\subsubsection{\texorpdfstring{gl\_draw\_pixels()}{gl\_draw\_pixels()}}
+{\footnotesize\ttfamily virtual void example\+::\+Color\+\_\+\+Buffer\+::gl\+\_\+draw\+\_\+pixels (\begin{DoxyParamCaption}\item[{int}]{raster\+\_\+x,  }\item[{int}]{raster\+\_\+y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classexample_1_1_color___buffer___rgba8888_a66e133b6fd196f02a0ba454dd3fc550f}{example\+::\+Color\+\_\+\+Buffer\+\_\+\+Rgba8888}}, and \mbox{\hyperlink{classexample_1_1_color___buffer___rgb565_a990c8e8f928b672ab82f7364b12eadb2}{example\+::\+Color\+\_\+\+Buffer\+\_\+\+Rgb565}}.
+
+\mbox{\Hypertarget{classexample_1_1_color___buffer_ae316a2df43a9ead02cc45170a8d0f7ed}\label{classexample_1_1_color___buffer_ae316a2df43a9ead02cc45170a8d0f7ed}} 
+\index{example::Color\_Buffer@{example::Color\_Buffer}!offset\_at@{offset\_at}}
+\index{offset\_at@{offset\_at}!example::Color\_Buffer@{example::Color\_Buffer}}
+\subsubsection{\texorpdfstring{offset\_at()}{offset\_at()}}
+{\footnotesize\ttfamily int example\+::\+Color\+\_\+\+Buffer\+::offset\+\_\+at (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classexample_1_1_color___buffer_a3fbfa949ee340ccdb40ad0ce8339b827}\label{classexample_1_1_color___buffer_a3fbfa949ee340ccdb40ad0ce8339b827}} 
+\index{example::Color\_Buffer@{example::Color\_Buffer}!set\_color@{set\_color}}
+\index{set\_color@{set\_color}!example::Color\_Buffer@{example::Color\_Buffer}}
+\subsubsection{\texorpdfstring{set\_color()}{set\_color()}}
+{\footnotesize\ttfamily virtual void example\+::\+Color\+\_\+\+Buffer\+::set\+\_\+color (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{g,  }\item[{int}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classexample_1_1_color___buffer___rgba8888_a408bf6adf54fc9958b74d21c8f6da178}{example\+::\+Color\+\_\+\+Buffer\+\_\+\+Rgba8888}}, and \mbox{\hyperlink{classexample_1_1_color___buffer___rgb565_ac38babd86731bf63703875706b0138c6}{example\+::\+Color\+\_\+\+Buffer\+\_\+\+Rgb565}}.
+
+\mbox{\Hypertarget{classexample_1_1_color___buffer_a967ea326ec0889a36db523727a8154b5}\label{classexample_1_1_color___buffer_a967ea326ec0889a36db523727a8154b5}} 
+\index{example::Color\_Buffer@{example::Color\_Buffer}!set\_pixel@{set\_pixel}}
+\index{set\_pixel@{set\_pixel}!example::Color\_Buffer@{example::Color\_Buffer}}
+\subsubsection{\texorpdfstring{set\_pixel()}{set\_pixel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void example\+::\+Color\+\_\+\+Buffer\+::set\+\_\+pixel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classexample_1_1_color___buffer___rgba8888_aceb94fbc6797177c5a401f4d10d56766}{example\+::\+Color\+\_\+\+Buffer\+\_\+\+Rgba8888}}, and \mbox{\hyperlink{classexample_1_1_color___buffer___rgb565_a0f3e81af58dbe0b6456c239b24221baa}{example\+::\+Color\+\_\+\+Buffer\+\_\+\+Rgb565}}.
+
+\mbox{\Hypertarget{classexample_1_1_color___buffer_a1c919e629ef74e418e1ad416d0a5e85a}\label{classexample_1_1_color___buffer_a1c919e629ef74e418e1ad416d0a5e85a}} 
+\index{example::Color\_Buffer@{example::Color\_Buffer}!set\_pixel@{set\_pixel}}
+\index{set\_pixel@{set\_pixel}!example::Color\_Buffer@{example::Color\_Buffer}}
+\subsubsection{\texorpdfstring{set\_pixel()}{set\_pixel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void example\+::\+Color\+\_\+\+Buffer\+::set\+\_\+pixel (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classexample_1_1_color___buffer___rgba8888_ac741fa7bca9b980a475e6f7033b64347}{example\+::\+Color\+\_\+\+Buffer\+\_\+\+Rgba8888}}, and \mbox{\hyperlink{classexample_1_1_color___buffer___rgb565_a53f9763360ddbb788e0dfa0ec5a0a9f9}{example\+::\+Color\+\_\+\+Buffer\+\_\+\+Rgb565}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classexample_1_1_color___buffer_ae01f4538ee30af1d3072a425c5ad37ac}\label{classexample_1_1_color___buffer_ae01f4538ee30af1d3072a425c5ad37ac}} 
+\index{example::Color\_Buffer@{example::Color\_Buffer}!height@{height}}
+\index{height@{height}!example::Color\_Buffer@{example::Color\_Buffer}}
+\subsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily size\+\_\+t example\+::\+Color\+\_\+\+Buffer\+::height\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classexample_1_1_color___buffer_ab61454d4b35cbba00d2e634d14ed20ac}\label{classexample_1_1_color___buffer_ab61454d4b35cbba00d2e634d14ed20ac}} 
+\index{example::Color\_Buffer@{example::Color\_Buffer}!width@{width}}
+\index{width@{width}!example::Color\_Buffer@{example::Color\_Buffer}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily size\+\_\+t example\+::\+Color\+\_\+\+Buffer\+::width\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_color___buffer_8hpp}{Color\+\_\+\+Buffer.\+hpp}}\end{DoxyCompactItemize}

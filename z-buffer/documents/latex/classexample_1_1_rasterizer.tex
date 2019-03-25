@@ -1,0 +1,129 @@
+\hypertarget{classexample_1_1_rasterizer}{}\section{example\+::Rasterizer$<$ C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE $>$ Class Template Reference}
+\label{classexample_1_1_rasterizer}\index{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}}
+
+
+{\ttfamily \#include $<$Rasterizer.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE \mbox{\hyperlink{classexample_1_1_rasterizer_a710beccb975a5f1aa771c44f784da525}{Color\+\_\+\+Buffer}}
+\item 
+typedef Color\+\_\+\+Buffer\+::\+Color \mbox{\hyperlink{classexample_1_1_rasterizer_aabfa22a5aef17d16a0cfb362fa30e69b}{Color}}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_rasterizer_abd4a31e3b3bc495d66c0d05df25885a1}{Rasterizer}} (\mbox{\hyperlink{classexample_1_1_rasterizer_a710beccb975a5f1aa771c44f784da525}{Color\+\_\+\+Buffer}} \&target)
+\item 
+const \mbox{\hyperlink{classexample_1_1_rasterizer_a710beccb975a5f1aa771c44f784da525}{Color\+\_\+\+Buffer}} \& \mbox{\hyperlink{classexample_1_1_rasterizer_a21b94302fba144872555e84af362f87c}{get\+\_\+color\+\_\+buffer}} () const
+\item 
+void \mbox{\hyperlink{classexample_1_1_rasterizer_a6770b1e636262a2977ee2ccca726b134}{set\+\_\+color}} (const \mbox{\hyperlink{classexample_1_1_rasterizer_aabfa22a5aef17d16a0cfb362fa30e69b}{Color}} \&new\+\_\+color)
+\item 
+void \mbox{\hyperlink{classexample_1_1_rasterizer_a0043c4af15566e7f0463a22c04c67812}{set\+\_\+color}} (int r, int g, int b)
+\item 
+void \mbox{\hyperlink{classexample_1_1_rasterizer_a98cb1b7667d18c7038c964e5551d6d56}{clear}} ()
+\item 
+void \mbox{\hyperlink{classexample_1_1_rasterizer_afaa4b27e01bc41a8a3fcda71d1799052}{clear}} (int r, int g, int b)
+\begin{DoxyCompactList}\small\item\em Limpia el buffer de colores con el color recibido. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_rasterizer_ae8d8136137381542b9e1ac4ddc410aaa}{fill\+\_\+convex\+\_\+polygon}} (const Point4i $\ast$const vertices, const int $\ast$const indices\+\_\+begin, const int $\ast$const indices\+\_\+end)
+\item 
+void \mbox{\hyperlink{classexample_1_1_rasterizer_a54faf27d2f9ac25948051944bd5b5d0d}{fill\+\_\+convex\+\_\+polygon\+\_\+z\+\_\+buffer}} (const Point4i $\ast$const vertices, const int $\ast$const indices\+\_\+begin, const int $\ast$const indices\+\_\+end)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classexample_1_1_rasterizer_aabfa22a5aef17d16a0cfb362fa30e69b}\label{classexample_1_1_rasterizer_aabfa22a5aef17d16a0cfb362fa30e69b}} 
+\index{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}!Color@{Color}}
+\index{Color@{Color}!example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}}
+\subsubsection{\texorpdfstring{Color}{Color}}
+{\footnotesize\ttfamily template$<$class C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE$>$ \\
+typedef Color\+\_\+\+Buffer\+::\+Color \mbox{\hyperlink{classexample_1_1_rasterizer}{example\+::\+Rasterizer}}$<$ C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE $>$\+::\mbox{\hyperlink{classexample_1_1_rasterizer_aabfa22a5aef17d16a0cfb362fa30e69b}{Color}}}
+
+\mbox{\Hypertarget{classexample_1_1_rasterizer_a710beccb975a5f1aa771c44f784da525}\label{classexample_1_1_rasterizer_a710beccb975a5f1aa771c44f784da525}} 
+\index{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}!Color\_Buffer@{Color\_Buffer}}
+\index{Color\_Buffer@{Color\_Buffer}!example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}}
+\subsubsection{\texorpdfstring{Color\_Buffer}{Color\_Buffer}}
+{\footnotesize\ttfamily template$<$class C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE$>$ \\
+typedef C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE \mbox{\hyperlink{classexample_1_1_rasterizer}{example\+::\+Rasterizer}}$<$ C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE $>$\+::\mbox{\hyperlink{classexample_1_1_rasterizer_a710beccb975a5f1aa771c44f784da525}{Color\+\_\+\+Buffer}}}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_rasterizer_abd4a31e3b3bc495d66c0d05df25885a1}\label{classexample_1_1_rasterizer_abd4a31e3b3bc495d66c0d05df25885a1}} 
+\index{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}!Rasterizer@{Rasterizer}}
+\index{Rasterizer@{Rasterizer}!example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}}
+\subsubsection{\texorpdfstring{Rasterizer()}{Rasterizer()}}
+{\footnotesize\ttfamily template$<$class C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE$>$ \\
+\mbox{\hyperlink{classexample_1_1_rasterizer}{example\+::\+Rasterizer}}$<$ C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE $>$\+::\mbox{\hyperlink{classexample_1_1_rasterizer}{Rasterizer}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_rasterizer_a710beccb975a5f1aa771c44f784da525}{Color\+\_\+\+Buffer}} \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_rasterizer_a98cb1b7667d18c7038c964e5551d6d56}\label{classexample_1_1_rasterizer_a98cb1b7667d18c7038c964e5551d6d56}} 
+\index{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}!clear@{clear}}
+\index{clear@{clear}!example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}}
+\subsubsection{\texorpdfstring{clear()}{clear()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE$>$ \\
+void \mbox{\hyperlink{classexample_1_1_rasterizer}{example\+::\+Rasterizer}}$<$ C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classexample_1_1_rasterizer_afaa4b27e01bc41a8a3fcda71d1799052}\label{classexample_1_1_rasterizer_afaa4b27e01bc41a8a3fcda71d1799052}} 
+\index{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}!clear@{clear}}
+\index{clear@{clear}!example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}}
+\subsubsection{\texorpdfstring{clear()}{clear()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE$>$ \\
+void \mbox{\hyperlink{classexample_1_1_rasterizer}{example\+::\+Rasterizer}}$<$ C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE $>$\+::clear (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{g,  }\item[{int}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Limpia el buffer de colores con el color recibido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & \\
+\hline
+{\em g} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_rasterizer_ae8d8136137381542b9e1ac4ddc410aaa}\label{classexample_1_1_rasterizer_ae8d8136137381542b9e1ac4ddc410aaa}} 
+\index{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}!fill\_convex\_polygon@{fill\_convex\_polygon}}
+\index{fill\_convex\_polygon@{fill\_convex\_polygon}!example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}}
+\subsubsection{\texorpdfstring{fill\_convex\_polygon()}{fill\_convex\_polygon()}}
+{\footnotesize\ttfamily template$<$class C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE $>$ \\
+void \mbox{\hyperlink{classexample_1_1_rasterizer}{example\+::\+Rasterizer}}$<$ C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE $>$\+::fill\+\_\+convex\+\_\+polygon (\begin{DoxyParamCaption}\item[{const Point4i $\ast$const}]{vertices,  }\item[{const int $\ast$const}]{indices\+\_\+begin,  }\item[{const int $\ast$const}]{indices\+\_\+end }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classexample_1_1_rasterizer_a54faf27d2f9ac25948051944bd5b5d0d}\label{classexample_1_1_rasterizer_a54faf27d2f9ac25948051944bd5b5d0d}} 
+\index{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}!fill\_convex\_polygon\_z\_buffer@{fill\_convex\_polygon\_z\_buffer}}
+\index{fill\_convex\_polygon\_z\_buffer@{fill\_convex\_polygon\_z\_buffer}!example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}}
+\subsubsection{\texorpdfstring{fill\_convex\_polygon\_z\_buffer()}{fill\_convex\_polygon\_z\_buffer()}}
+{\footnotesize\ttfamily template$<$class C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE $>$ \\
+void \mbox{\hyperlink{classexample_1_1_rasterizer}{example\+::\+Rasterizer}}$<$ C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE $>$\+::fill\+\_\+convex\+\_\+polygon\+\_\+z\+\_\+buffer (\begin{DoxyParamCaption}\item[{const Point4i $\ast$const}]{vertices,  }\item[{const int $\ast$const}]{indices\+\_\+begin,  }\item[{const int $\ast$const}]{indices\+\_\+end }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classexample_1_1_rasterizer_a21b94302fba144872555e84af362f87c}\label{classexample_1_1_rasterizer_a21b94302fba144872555e84af362f87c}} 
+\index{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}!get\_color\_buffer@{get\_color\_buffer}}
+\index{get\_color\_buffer@{get\_color\_buffer}!example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}}
+\subsubsection{\texorpdfstring{get\_color\_buffer()}{get\_color\_buffer()}}
+{\footnotesize\ttfamily template$<$class C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE$>$ \\
+const \mbox{\hyperlink{classexample_1_1_rasterizer_a710beccb975a5f1aa771c44f784da525}{Color\+\_\+\+Buffer}}\& \mbox{\hyperlink{classexample_1_1_rasterizer}{example\+::\+Rasterizer}}$<$ C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE $>$\+::get\+\_\+color\+\_\+buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classexample_1_1_rasterizer_a6770b1e636262a2977ee2ccca726b134}\label{classexample_1_1_rasterizer_a6770b1e636262a2977ee2ccca726b134}} 
+\index{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}!set\_color@{set\_color}}
+\index{set\_color@{set\_color}!example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}}
+\subsubsection{\texorpdfstring{set\_color()}{set\_color()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE$>$ \\
+void \mbox{\hyperlink{classexample_1_1_rasterizer}{example\+::\+Rasterizer}}$<$ C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE $>$\+::set\+\_\+color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classexample_1_1_rasterizer_aabfa22a5aef17d16a0cfb362fa30e69b}{Color}} \&}]{new\+\_\+color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classexample_1_1_rasterizer_a0043c4af15566e7f0463a22c04c67812}\label{classexample_1_1_rasterizer_a0043c4af15566e7f0463a22c04c67812}} 
+\index{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}!set\_color@{set\_color}}
+\index{set\_color@{set\_color}!example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$@{example::Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$}}
+\subsubsection{\texorpdfstring{set\_color()}{set\_color()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE$>$ \\
+void \mbox{\hyperlink{classexample_1_1_rasterizer}{example\+::\+Rasterizer}}$<$ C\+O\+L\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+T\+Y\+PE $>$\+::set\+\_\+color (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{g,  }\item[{int}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_rasterizer_8hpp}{Rasterizer.\+hpp}}\end{DoxyCompactItemize}

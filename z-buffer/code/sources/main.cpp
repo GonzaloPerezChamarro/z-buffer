@@ -21,10 +21,11 @@ static const size_t window_height = 600;
 
 int main ()
 {
-    // Create the window and the view that will be shown within the window:
-
+    
+    //Crea una nueva ventana sfml
     Window window(VideoMode(window_width, window_height), "Z-Buffer", Style::Titlebar | Style::Close, ContextSettings(32));
-    View   view  ("..//..//resources//scene.xml", window_width, window_height );
+    //Crea una escena desde el xml
+    View   view  ("..//resources//scene.xml", window_width, window_height );
 
     // Initialization:
 
