@@ -1,0 +1,235 @@
+\hypertarget{classexample_1_1_model}{}\section{example\+::Model Class Reference}
+\label{classexample_1_1_model}\index{example::Model@{example::Model}}
+
+
+{\ttfamily \#include $<$Model.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_model_a6fa0e02fdbf149f9058075fa75175416}{Model}} (const string \&name, const string \&path, Translation3f position, Scaling3f scale, float rx, float ry, float rz, \mbox{\hyperlink{structexample_1_1_color___buffer___rgba8888_1_1_color}{Color}} c)
+\begin{DoxyCompactList}\small\item\em Constructor del modelo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_model_a50162748d338240194f9072c3ea452eb}{update}} (Projection3f $\ast$projection, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_light}{Light}} $>$ light, float ambiental\+\_\+intensity)
+\begin{DoxyCompactList}\small\item\em Metodo de actualizacion del modelo en cuanto a posicion y luz. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_model_aeadfa130f9617b18f11d992ea2dc07ed}{paint}} (\mbox{\hyperlink{classexample_1_1_rasterizer}{Rasterizer}}$<$ \mbox{\hyperlink{classexample_1_1_color___buffer___rgba8888}{Color\+\_\+\+Buffer}} $>$ $\ast$rasterizer)
+\begin{DoxyCompactList}\small\item\em Metodo de pintado del modelo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classexample_1_1_model_a5b038b07484e2b74bc06727e81eb49eb}{is\+\_\+frontface}} (const Vertex $\ast$const projected\+\_\+vertices, const int $\ast$const indices)
+\begin{DoxyCompactList}\small\item\em (Antiguo) Metodo que comprueba si el poligono mira a camara \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classexample_1_1_model_a576801ca87f261183fa0b0720114fa04}{is\+\_\+frontface}} (const Vertex $\ast$const projected\+\_\+vertices, const int index)
+\begin{DoxyCompactList}\small\item\em Metodo que comprueba si el poligono mira a camara. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_model_a521e2eff6ac59ccd7d816e014f846600}{add\+\_\+child}} (const string name, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_model}{Model}} $>$ child)
+\begin{DoxyCompactList}\small\item\em Añade un nuevo hijo a la lista de hijos. \end{DoxyCompactList}\item 
+const string \& \mbox{\hyperlink{classexample_1_1_model_aaeab3d2650177e97847b11684c7575f4}{get\+\_\+name}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve el nombre del modelo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_model_a965eaf2f978ae6703ee30d61c0d9174d}{set\+\_\+parent\+\_\+transform}} (Transform tr)
+\begin{DoxyCompactList}\small\item\em Ajusta el transform del padre. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{classexample_1_1_model_a18630b95037b7e762d87059f5264e83c}{get\+\_\+transform}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve el transform del modelo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_model_a81c93ba8b5c79f79e4f33a3bf826c0ae}{set\+\_\+rotation\+\_\+speed\+\_\+y}} (float speed)
+\begin{DoxyCompactList}\small\item\em Ajusta la velocidad de rotacion en y. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_model_a6fa0e02fdbf149f9058075fa75175416}\label{classexample_1_1_model_a6fa0e02fdbf149f9058075fa75175416}} 
+\index{example::Model@{example::Model}!Model@{Model}}
+\index{Model@{Model}!example::Model@{example::Model}}
+\subsubsection{\texorpdfstring{Model()}{Model()}}
+{\footnotesize\ttfamily example\+::\+Model\+::\+Model (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{const string \&}]{path,  }\item[{Translation3f}]{position,  }\item[{Scaling3f}]{scale,  }\item[{float}]{rx,  }\item[{float}]{ry,  }\item[{float}]{rz,  }\item[{\mbox{\hyperlink{structexample_1_1_color___buffer___rgba8888_1_1_color}{Color}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Constructor del modelo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nombre \\
+\hline
+{\em path} & Ruta del obj \\
+\hline
+{\em position} & Posicion local \\
+\hline
+{\em scale} & Escala del modelo \\
+\hline
+{\em rx} & Rotacion en x \\
+\hline
+{\em ry} & Rotacion en y \\
+\hline
+{\em rz} & Rotacion en z \\
+\hline
+{\em c} & Color del modelo \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_model_a521e2eff6ac59ccd7d816e014f846600}\label{classexample_1_1_model_a521e2eff6ac59ccd7d816e014f846600}} 
+\index{example::Model@{example::Model}!add\_child@{add\_child}}
+\index{add\_child@{add\_child}!example::Model@{example::Model}}
+\subsubsection{\texorpdfstring{add\_child()}{add\_child()}}
+{\footnotesize\ttfamily void example\+::\+Model\+::add\+\_\+child (\begin{DoxyParamCaption}\item[{const string}]{name,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_model}{Model}} $>$}]{child }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Añade un nuevo hijo a la lista de hijos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nombre del hijo \\
+\hline
+{\em child} & Puntero al hijo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_model_aaeab3d2650177e97847b11684c7575f4}\label{classexample_1_1_model_aaeab3d2650177e97847b11684c7575f4}} 
+\index{example::Model@{example::Model}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!example::Model@{example::Model}}
+\subsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily const string\& example\+::\+Model\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el nombre del modelo. 
+
+\begin{DoxyReturn}{Returns}
+const string\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_model_a18630b95037b7e762d87059f5264e83c}\label{classexample_1_1_model_a18630b95037b7e762d87059f5264e83c}} 
+\index{example::Model@{example::Model}!get\_transform@{get\_transform}}
+\index{get\_transform@{get\_transform}!example::Model@{example::Model}}
+\subsubsection{\texorpdfstring{get\_transform()}{get\_transform()}}
+{\footnotesize\ttfamily Transform example\+::\+Model\+::get\+\_\+transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el transform del modelo. 
+
+\begin{DoxyReturn}{Returns}
+Transform 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_model_a5b038b07484e2b74bc06727e81eb49eb}\label{classexample_1_1_model_a5b038b07484e2b74bc06727e81eb49eb}} 
+\index{example::Model@{example::Model}!is\_frontface@{is\_frontface}}
+\index{is\_frontface@{is\_frontface}!example::Model@{example::Model}}
+\subsubsection{\texorpdfstring{is\_frontface()}{is\_frontface()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool example\+::\+Model\+::is\+\_\+frontface (\begin{DoxyParamCaption}\item[{const Vertex $\ast$const}]{projected\+\_\+vertices,  }\item[{const int $\ast$const}]{indices }\end{DoxyParamCaption})}
+
+
+
+(Antiguo) Metodo que comprueba si el poligono mira a camara 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projected\+\_\+vertices} & \\
+\hline
+{\em indices} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_model_a576801ca87f261183fa0b0720114fa04}\label{classexample_1_1_model_a576801ca87f261183fa0b0720114fa04}} 
+\index{example::Model@{example::Model}!is\_frontface@{is\_frontface}}
+\index{is\_frontface@{is\_frontface}!example::Model@{example::Model}}
+\subsubsection{\texorpdfstring{is\_frontface()}{is\_frontface()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool example\+::\+Model\+::is\+\_\+frontface (\begin{DoxyParamCaption}\item[{const Vertex $\ast$const}]{projected\+\_\+vertices,  }\item[{const int}]{index }\end{DoxyParamCaption})}
+
+
+
+Metodo que comprueba si el poligono mira a camara. 
+
+Metodo sobrecargado para esta disposición de buffer de vertices ordenados.
+
+
+\begin{DoxyParams}{Parameters}
+{\em projected\+\_\+vertices} & \\
+\hline
+{\em indices} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em projected\+\_\+vertices} & \\
+\hline
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_model_aeadfa130f9617b18f11d992ea2dc07ed}\label{classexample_1_1_model_aeadfa130f9617b18f11d992ea2dc07ed}} 
+\index{example::Model@{example::Model}!paint@{paint}}
+\index{paint@{paint}!example::Model@{example::Model}}
+\subsubsection{\texorpdfstring{paint()}{paint()}}
+{\footnotesize\ttfamily void example\+::\+Model\+::paint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_rasterizer}{Rasterizer}}$<$ \mbox{\hyperlink{classexample_1_1_color___buffer___rgba8888}{Color\+\_\+\+Buffer}} $>$ $\ast$}]{rasterizer }\end{DoxyParamCaption})}
+
+
+
+Metodo de pintado del modelo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rasterizer} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_model_a965eaf2f978ae6703ee30d61c0d9174d}\label{classexample_1_1_model_a965eaf2f978ae6703ee30d61c0d9174d}} 
+\index{example::Model@{example::Model}!set\_parent\_transform@{set\_parent\_transform}}
+\index{set\_parent\_transform@{set\_parent\_transform}!example::Model@{example::Model}}
+\subsubsection{\texorpdfstring{set\_parent\_transform()}{set\_parent\_transform()}}
+{\footnotesize\ttfamily void example\+::\+Model\+::set\+\_\+parent\+\_\+transform (\begin{DoxyParamCaption}\item[{Transform}]{tr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ajusta el transform del padre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tr} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_model_a81c93ba8b5c79f79e4f33a3bf826c0ae}\label{classexample_1_1_model_a81c93ba8b5c79f79e4f33a3bf826c0ae}} 
+\index{example::Model@{example::Model}!set\_rotation\_speed\_y@{set\_rotation\_speed\_y}}
+\index{set\_rotation\_speed\_y@{set\_rotation\_speed\_y}!example::Model@{example::Model}}
+\subsubsection{\texorpdfstring{set\_rotation\_speed\_y()}{set\_rotation\_speed\_y()}}
+{\footnotesize\ttfamily void example\+::\+Model\+::set\+\_\+rotation\+\_\+speed\+\_\+y (\begin{DoxyParamCaption}\item[{float}]{speed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ajusta la velocidad de rotacion en y. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_model_a50162748d338240194f9072c3ea452eb}\label{classexample_1_1_model_a50162748d338240194f9072c3ea452eb}} 
+\index{example::Model@{example::Model}!update@{update}}
+\index{update@{update}!example::Model@{example::Model}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void example\+::\+Model\+::update (\begin{DoxyParamCaption}\item[{Projection3f $\ast$}]{projection,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_light}{Light}} $>$}]{light,  }\item[{float}]{ambiental\+\_\+intensity }\end{DoxyParamCaption})}
+
+
+
+Metodo de actualizacion del modelo en cuanto a posicion y luz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projection} & Proyeccion \\
+\hline
+{\em light} & Luz de la escena \\
+\hline
+{\em ambiental\+\_\+intensity} & Intensidad ambiental de la escena \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_model_8hpp}{Model.\+hpp}}\item 
+code/sources/\mbox{\hyperlink{_model_8cpp}{Model.\+cpp}}\end{DoxyCompactItemize}

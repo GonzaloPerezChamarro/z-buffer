@@ -1,13 +1,13 @@
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
- *                                                                             *
- *  Started by Ángel on december of 2013                                       *
- *                                                                             *
- *  This is free software released into the public domain.                     *
- *                                                                             *
- *  angel.rodriguez@esne.edu                                                   *
- *                                                                             *
-\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/**
+ * @file Rasterizer.hpp
+ * @author Gonzalo Perez Chamarro (From Angel Rodriguez Ballesteros resources)
+ * @brief Clase encargada de rasterizar los polígonos de los modelos
+ * @version 0.1
+ * @date 2019-03-10
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 
 #ifndef RASTERIZER_HEADER
 #define RASTERIZER_HEADER
@@ -73,14 +73,41 @@
             {
                 for (Color * c = color_buffer.colors (), * end = c + color_buffer.size (); c < end; c++)
                 {
-                    *c = 0;
+					*c = 0;
                 }
 
                 for (int * z = z_buffer.data (), * end = z + z_buffer.size (); z != end; z++)
                 {
                     *z = std::numeric_limits< int >::max ();
                 }
+
+
             }
+
+/**
+ * @brief Limpia el buffer de colores con el color recibido
+ * 
+ * @param r 
+ * @param g 
+ * @param b 
+ */
+			void clear(int r, int g, int b)
+			{
+				for (Color * c = color_buffer.colors(), *end = c + color_buffer.size(); c < end; c++)
+				{
+					c->data.component.r = r;
+					c->data.component.g = g;
+					c->data.component.b = b;
+				}
+
+				for (int * z = z_buffer.data(), *end = z + z_buffer.size(); z != end; z++)
+				{
+					*z = std::numeric_limits< int >::max();
+				}
+
+
+			}
+
 
             void fill_convex_polygon
             (

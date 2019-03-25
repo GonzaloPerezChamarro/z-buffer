@@ -4,10 +4,10 @@
   <mesh>
     <model>island.obj</model>
     <position>0.0,-2.0,-3.5</position>
-    <rotation>0.0,0.0,0.0</rotation>
+    <rotation>0.2,0.0,0.0</rotation>
     <scale>1</scale>
     <color>70,30,0</color>
-    <rot_speed>0.025</rot_speed>
+    <rot_speed>0.01</rot_speed>
     <children>
         <mesh>
           <model>bridge.obj</model>
@@ -74,12 +74,19 @@
           <rot_speed>0.0</rot_speed>
         </mesh>
     </children>
-      
+  </mesh>
+
+  <mesh>
+    <model>clouds.obj</model>
+    <position>0.0,0.8,-3.5</position>
+    <rotation>0.2,0.0,0.0</rotation>
+    <scale>1</scale>
+    <color>240,240,240</color>
+    <rot_speed>-0.01</rot_speed>
   </mesh>
   
 
   <light>
-    <intensity>100</intensity>
     <position>3,-1,-1</position>
     <rotation>0,90,0</rotation>
     <scale>1</scale>
